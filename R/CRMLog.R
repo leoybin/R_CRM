@@ -10,8 +10,9 @@
 #' @export
 #'
 #' @examples
-#' crm_customer()
-crm_log <- function(FNumber, FOccurrenceTime_min, FOccurrenceTime_max, FCompanyName) {
+#' crm_log()
+# crm_query_log('3.2.2.000014','2023-01-02','2023-01-05','')
+crm_query_log <- function(FNumber, FOccurrenceTime_min, FOccurrenceTime_max, FCompanyName) {
   #注册python模板
   mdl <- tsda::import('log_return.ret_log')
   #调用python函数，将.替代为$
@@ -19,4 +20,3 @@ crm_log <- function(FNumber, FOccurrenceTime_min, FOccurrenceTime_max, FCompanyN
   #返回结果
   return(res)
 }
-crm_log('3.2.2.000014','2023-01-02','2023-01-05','')
